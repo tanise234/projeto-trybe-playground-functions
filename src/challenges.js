@@ -1,11 +1,11 @@
 // Desafio 1
 function compareTrue(bool1, bool2) {
- if (bool1 === true && bool2 === true) {
-   return true;
- }
- else {
-   return false;
- }
+  if (bool1 === true && bool2 === true) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 // Desafio 2
@@ -21,7 +21,7 @@ function splitSentence(string) {
 
 // Desafio 4
 function concatName(array) {
-  return array[array.length -1] +', ' + array[0];
+  return array[array.length - 1] + ', ' + array[0];
 }
 
 // Desafio 5
@@ -30,8 +30,25 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(array) {
+
+  // encontrar o maior valor
+  let maior = array[0]
+  for (let index = 1; index < array.length; index += 1) {
+    if (maior < array[index]) {
+      maior = array[index];
+    }
+  }
+
+  // calcular as repetições
+  let count = 0;
+  for (let index = 0; index < array.length; index += 1) {
+    if (maior === array[index]) {
+      count += 1;
+    }
+  }
+
+  return count;
 }
 
 // Desafio 7
