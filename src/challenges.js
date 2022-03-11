@@ -76,16 +76,42 @@ function fizzBuzz(array) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
-}
+function encode(string) {
+  for (let index = 0; index < string.length; index += 1) {
+
+    console.log(string[index]);
+    switch (string[index]) {
+      case 'a':
+        console.log(string[index]);
+        string[index] = 1;
+        console.log(string[index]);
+        break;
+
+      default:
+        break;
+    }
+  } return string;
+} console.log(encode('Tanise'));
 function decode() {
   // seu código aqui
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(array, name) {
+  if (array.length !== 0) {
+    // ordenar o array
+    let aux = array.sort();
+    for (let index = 0; index < aux.length; index += 1) {
+      // criar os objetos
+      array[index] = {
+        tech: aux[index],
+        name: name
+      }
+    }
+    return array;
+  } else {
+    return 'Vazio!';
+  }
 }
 
 module.exports = {
