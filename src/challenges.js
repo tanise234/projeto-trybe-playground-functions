@@ -77,24 +77,58 @@ function fizzBuzz(array) {
 
 // Desafio 9
 function encode(string) {
+  let aux = [];
   for (let index in string) {
-    string = string.replace('a',1);
-    string = string.replace('e',2);
-    string = string.replace('i',3);
-    string = string.replace('o',4);
-    string = string.replace('u',5);
+    switch (string[index]) {
+      case 'a':
+        aux[index] = '1';
+        break;
+      case 'e':
+        aux[index] = '2';
+        break;
+      case 'i':
+        aux[index] = '3';
+        break;
+      case 'o':
+        aux[index] = '4';
+        break;
+      case 'u':
+        aux[index] = '5';
+        break;
+
+      default:
+        aux[index] = string[index];
+        break;
+    }
   }
-  return string;
-} 
+  return aux.join('');
+}
 function decode(string) {
+  let aux = [];
   for (let index in string) {
-    string = string.replace('1','a');
-    string = string.replace('2','e');
-    string = string.replace('3','i');
-    string = string.replace('4','o');
-    string = string.replace('5','u');
+    switch (string[index]) {
+      case '1':
+        aux[index] = 'a';
+        break;
+      case '2':
+        aux[index] = 'e';
+        break;
+      case '3':
+        aux[index] = 'i';
+        break;
+      case '4':
+        aux[index] = 'o';
+        break;
+      case '5':
+        aux[index] = 'u';
+        break;
+
+      default:
+        aux[index] = string[index];
+        break;
+    }
   }
-  return string;
+  return aux.join('');
 }
 
 // Desafio 10
