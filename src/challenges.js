@@ -77,23 +77,24 @@ function fizzBuzz(array) {
 
 // Desafio 9
 function encode(string) {
-  for (let index = 0; index < string.length; index += 1) {
-
-    console.log(string[index]);
-    switch (string[index]) {
-      case 'a':
-        console.log(string[index]);
-        string[index] = 1;
-        console.log(string[index]);
-        break;
-
-      default:
-        break;
-    }
-  } return string;
-} console.log(encode('Tanise'));
-function decode() {
-  // seu código aqui
+  for (let index in string) {
+    string = string.replace('a',1);
+    string = string.replace('e',2);
+    string = string.replace('i',3);
+    string = string.replace('o',4);
+    string = string.replace('u',5);
+  }
+  return string;
+} 
+function decode(string) {
+  for (let index in string) {
+    string = string.replace('1','a');
+    string = string.replace('2','e');
+    string = string.replace('3','i');
+    string = string.replace('4','o');
+    string = string.replace('5','u');
+  }
+  return string;
 }
 
 // Desafio 10
