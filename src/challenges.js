@@ -2,8 +2,7 @@
 function compareTrue(bool1, bool2) {
   if (bool1 === true && bool2 === true) {
     return true;
-  }
-  else {
+  } else {
     return false;
   }
 }
@@ -12,7 +11,6 @@ function compareTrue(bool1, bool2) {
 function calcArea(base, height) {
   return (base * height) / 2;
 }
-
 
 // Desafio 3
 function splitSentence(string) {
@@ -31,9 +29,8 @@ function footballPoints(wins, ties) {
 
 // Desafio 6
 function highestCount(array) {
-
   // encontrar o maior valor
-  let maior = array[0]
+  let maior = array[0];
   for (let index = 1; index < array.length; index += 1) {
     if (maior < array[index]) {
       maior = array[index];
@@ -55,18 +52,27 @@ function highestCount(array) {
 function catAndMouse(mouse, cat1, cat2) {
   if (cat1 < cat2) {
     return 'cat1';
-  }
-  else if (cat1 > cat2){
+  } else if (cat1 > cat2) {
     return 'cat2';
-  }
-  else {
-    return 'os gatos trombam e o rato foge'
+  } else {
+    return 'os gatos trombam e o rato foge';
   }
 }
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(array) {
+  for (let index in array) {
+    if (array[index] % 15 === 0) {
+      array[index] = 'fizzBuzz';
+    } else if (array[index] % 3 === 0) {
+      array[index] = 'fizz';
+    } else if (array[index] % 5 === 0) {
+      array[index] = 'buzz';
+    } else {
+      array[index] = 'bug!';
+    }
+  }
+  return array;
 }
 
 // Desafio 9
