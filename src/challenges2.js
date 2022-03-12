@@ -5,22 +5,31 @@ function generatePhoneNumber(array) {
     return 'Array com tamanho incorreto.';
   }
 
+  let rep = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   // validar os dígitos
   for (let index in array) {
-    if (array[index] < 0 || array[index] > 9) {
+    if (array[index] >= 0 && array[index] <= 9) {
+      // armazenar quantas vezes cada dígito se repete
+      rep[array[index]] += 1;
+    } else {
       return 'não é possível gerar um número de telefone com esses valores';
     }
   }
 
-  // verificar repetição
+  // verificar se algum dígito se repete 3 vezes ou mais
+  for (let index1 of rep) {
+    if (index1 >= 3) {
+      return 'não é possível gerar um número de telefone com esses valores';
+    }
+  }
 
-  // agrupar os dígitos
-  let parte1 = [array[0], array[1]];
-  let parte2 = [array[2], array[3], array[4], array[5], array[6]];
-  let parte3 = [array[7], array[8], array[9], array[10]];
-  let phoneNumber = '(' + parte1.join('') + ') ' + parte2.join('') + '-' + parte3.join('');
+// agrupar os dígitos
+let parte1 = [array[0], array[1]];
+let parte2 = [array[2], array[3], array[4], array[5], array[6]];
+let parte3 = [array[7], array[8], array[9], array[10]];
+let phoneNumber = '(' + parte1.join('') + ') ' + parte2.join('') + '-' + parte3.join('');
 
-  return phoneNumber;
+return phoneNumber;
 }
 
 // Desafio 12
@@ -56,12 +65,12 @@ function hydrate(string) {
     sum += parseFloat(beverages[index]);
   }
 
-  if (sum == 1){
+  if (sum == 1) {
     return '1 copo de água';
-  } else if (sum > 1){
+  } else if (sum > 1) {
     return sum + ' copos de água';
   }
- }
+}
 
 module.exports = {
   generatePhoneNumber,
