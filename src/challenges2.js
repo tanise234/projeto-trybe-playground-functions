@@ -13,7 +13,7 @@ function generatePhoneNumber(array) {
   }
 
   // verificar repetição
-  
+
   // agrupar os dígitos
   let parte1 = [array[0], array[1]];
   let parte2 = [array[2], array[3], array[4], array[5], array[6]];
@@ -37,7 +37,7 @@ function triangleCheck(lineA, lineB, lineC) {
   let difBC = Math.abs(lineB - lineC);
   let cond2 = (lineA > difBC && lineB > difAC && lineC > difAB);
 
-  if (cond1 && cond2){
+  if (cond1 && cond2) {
     return true;
   } else {
     return false;
@@ -45,9 +45,23 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
-}
+function hydrate(string) {
+  // identificar as quantidades
+  let drinks = /[0-9]/g;
+  let beverages = string.match(drinks);
+
+  // calcular a soma
+  let sum = 0;
+  for (let index = 0; index < beverages.length; index += 1) {
+    sum += parseFloat(beverages[index]);
+  }
+
+  if (sum == 1){
+    return '1 copo de água';
+  } else if (sum > 1){
+    return sum + ' copos de água';
+  }
+ }
 
 module.exports = {
   generatePhoneNumber,
