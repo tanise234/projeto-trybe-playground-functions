@@ -141,7 +141,7 @@ function techList(array, name) {
       array[index] = {
         tech: aux[index],
         name: name
-      }
+      };
     }
     return array;
   } else {
